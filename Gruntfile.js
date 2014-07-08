@@ -84,8 +84,8 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'concat', 'patternlab', /*'sass',*/ 'copy']);
+	grunt.registerTask('default', ['clean', 'concat', 'patternlab', 'sass', 'copy']);
 
 	//travis CI task
-	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', /*'sass',*/ 'copy', 'qunit'])
+	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', 'sass', 'copy', 'qunit'])
 };
