@@ -3,6 +3,15 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+        connect: {
+            server: {
+                options: {
+                    port: 8080,
+                    keepalive: true,
+                    base: 'public'
+                }
+            }
+        },
 		clean: {
 			options: { force: true },
 			files: ['./public/patterns']
@@ -88,4 +97,6 @@ module.exports = function(grunt) {
 
 	//travis CI task
 	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', 'sass', 'copy', 'qunit'])
+	// start server
+	grunt.registerTask('server', 'connect');
 };
